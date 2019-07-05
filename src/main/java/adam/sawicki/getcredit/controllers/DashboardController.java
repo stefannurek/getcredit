@@ -19,7 +19,11 @@ public class DashboardController {
 
     @PostMapping("/dashboard")
     public String dashboard(@ModelAttribute("formRequest") RequestForm form, Model model) {
-        model.addAttribute("infoCredit", form );
+        model.addAttribute("infoCredit", canGetCredit(form));
         return "dashboard";
+    }
+
+    private boolean canGetCredit(RequestForm form){
+        return (form.getMonthCash() - form.getMinusCash()) * 0.7 > form.getCreditCash()/form.getCreditTime();
     }
 }
