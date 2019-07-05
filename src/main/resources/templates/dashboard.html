@@ -6,8 +6,11 @@
 </head>
 <body>
 <center>
+    <div th:if="${infoCredit} != null" th:style="'background-color: ' + ${infoCredit} ? 'green' : 'red'">
+        <h1 th:text="${infoCredit} ? 'Dostałeś kredyt' : 'Niestety nie dostałeś kredytu'"></h1>
+    </div>
     <div style="background-color: lightblue; font-size:17px;">
-<form th:action="@{/dashboard}" method="post" th:object="${formRequest}">
+<form th:if="${infoCredit} == null" th:action="@{/dashboard}" method="post" th:object="${formRequest}">
     Dochód miesieczny: <input th:field="*{monthCash}" type="number"><br/>
     Zobowiazania miesieczne: <input th:field="*{minusCash}" type="number"><br/>
     Okres kredytowania: <input th:field="*{creditTime}" type="number"><br/>
