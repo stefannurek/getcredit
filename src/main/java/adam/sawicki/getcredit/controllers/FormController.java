@@ -23,7 +23,6 @@ public class FormController {
         return "index";
     }
 
-
     @GetMapping("/formshow")
     public String formGet() {
         return "index";

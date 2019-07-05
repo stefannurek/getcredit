@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1><span style="color: red" ; th:text="${error}"/></h1>
+    <br/>
+    <div style="background-color: lightblue; font-size:20px;">
+        <form th:action="@{/formshow}" method="post">
+            Nick: 		<input type="text" th:name="nick"/><br/>
+            Login:		 <input type="text" th:name="login"/><br/>
+            Password:	 <input type="password" th:name="password"/><br/>
+            <input type="submit" value="Send"/>
+        </form>
+    </div>
+</center>
+</body>
+</html>

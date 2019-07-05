@@ -19,9 +19,7 @@ public class DashboardController {
 
     @PostMapping("/dashboard")
     public String dashboard(@ModelAttribute("formRequest") RequestForm form, Model model) {
-
-        model.addAttribute("infoCredit", );
-
+        model.addAttribute("infoCredit", form );
         return "dashboard";
     }
 }
